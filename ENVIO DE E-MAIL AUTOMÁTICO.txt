@@ -1,0 +1,12 @@
+import smtplib    #módulo
+from email.mime.text import MIMEText  #função da biblioteca
+para = ["denislima650@gmail.com"]
+msg = MIMEText('Exemplo de email HTML do <b>SempreUpdate<b/>.', 'html', 'utf-8') #Texto no corpo do email
+msg["From"] = de                   #remetente
+msg["To"] = ', '.join(para)        #destinatário
+msg["Subject"] = "SempreUpdate"    #assunto
+raw = msg.as_string()
+smtp = smtplib.SMTP_SSL("smtp.gmail.com", 465) #inserindo porta padrão e domínio do gmail
+smtp.login("emaildetestedoca@gmail.com", "enbbulhfkcurfhex") #logando no email de envio
+smtp.sendmail(de, para, raw)  #comando de email
+smtp.quit()  #saindo do email

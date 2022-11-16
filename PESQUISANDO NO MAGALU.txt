@@ -1,0 +1,10 @@
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+browser = webdriver.Chrome()
+browser.get('https://www.magazineluiza.com.br/?partner_id=974&gclid=EAIaIQobChMIupq91o69-gIV-hTUAR2BAQcBEAAYAiAAEgIApvD_BwE&gclsrc=aw.ds')
+cxb = browser.find_element(By.XPATH, '//*[@id="input-search"]')
+cxb.click()
+cxb.send_keys("bicicleta viking")
+cxb = browser.find_element("xpath", '//*[@id="input-search"]')
+cxb.send_keys(Keys.ENTER)

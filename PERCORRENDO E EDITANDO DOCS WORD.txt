@@ -1,0 +1,23 @@
+import mysql.connector
+con = mysql.connector.connect(host='localhost', database='BBCE', user='Jarvis', password='oivCRrmjht879n34*_vhsdhbfAFkvunhu')
+from docx import Document
+from datetime import datetime
+d = Document("Contrato.docx")
+nome = "Denis"
+item1 = "Carro"
+item2 = "Notebook"
+item3 = "Celular"
+referencias = {
+    "XXXX": nome,
+    "YYYY": item1,
+    "ZZZZ": item2,
+    "WWWW": item3,
+    "DD": str(datetime.now().day),
+    "MM": str(datetime.now().month),
+    "AAAA": str(datetime.now().year)
+}
+for p in d.paragraphs:
+    for c in referencias:
+        valor = referencias[c]
+        p.text = p.text.replace(c, valor)
+d.save("Contato - Denis.docx")

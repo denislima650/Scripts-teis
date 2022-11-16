@@ -1,0 +1,13 @@
+import selenium
+import time
+from PIL import Image
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+import urllib.request
+Image1 = Image.open(r"C:\Log\OneDrive - GALAPAGOS CAPITAL\Documentos\recorte.png")
+
+#croppedIm = Image1.crop((esquerda, cima, direita, baixo))
+croppedIm = Image1.crop((65, 115, 1000, 985))
+croppedIm.show()
+time.sleep(5)

@@ -1,0 +1,24 @@
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+import urllib.request
+
+##logando no site
+browser = webdriver.Chrome()
+browser.get('https://www.google.com.br/search?q=flamengo+x+river+2019&sxsrf=ALiCzsYB-XwWICzoDP8pjGKkLlmiIwwn1Q:1664802559824&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjs88vpkMT6AhUHq5UCHal2BKgQ_AUoA3oECAEQBQ&biw=1279&bih=609&dpr=1.5#imgrc=nRnHFOXOuRAH0M')
+divimg = browser.find_element(By.ID, 'islmp')
+primeiraimg = divimg.find_element(By.XPATH, '//*[@id="islrg"]/div[1]/div[1]/a[1]/div[1]/img')
+atributo = primeiraimg.get_attribute("src")
+print(atributo)
+
+try:
+    urllib.request.urlretrieve(atributo,r"C:\Users\denis.lima\Downloads\teste.jpg")
+    print("Imagem baixada")
+except:
+    print("Imagem não baixada")
+
+##VIA SCREENSHOT
+##baixando imagem
+abc = browser.find_element(By.XPATH, '//*[@id="node-1111"]/div[2]/p[1]/a/img')
+ghi = browser.get_screenshot_as_file(r"C:\Users\denis.lima\Downloads\teste.png")
+print(ghi)

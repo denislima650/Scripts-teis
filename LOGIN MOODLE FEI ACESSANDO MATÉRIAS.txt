@@ -1,0 +1,14 @@
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+browser = webdriver.Chrome()
+browser.get('https://moodle.fei.edu.br/login/index.php')
+cxb = browser.find_element(By.ID, "username")
+cxb.click()
+cxb.send_keys("unifdlima")
+cxb = browser.find_element(By.ID, "password")
+cxb.click()
+cxb.send_keys("SVQWDV9")
+aaa = browser.find_element(By.ID, "loginbtn")
+aaa.click()
+bbb = browser.find_element(By.XPATH, '//*[@id="nav-drawer"]/nav/ul/li[6]/a/div/div/span[2]')
+bbb.click()

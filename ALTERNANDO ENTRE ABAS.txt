@@ -1,0 +1,16 @@
+# open the image in a new tab
+driver.execute_script('''window.open("''' + wanted_url + '''","_blank");''')
+sleep(2)
+driver.switch_to.window(driver.window_handles[1])
+sleep(2)
+
+# make screenshot
+driver.save_screenshot("C://Folder/" + photo_name + ".jpeg")
+sleep(2)
+
+# close the new tab
+driver.execute_script('''window.close();''')
+sleep(2)
+
+#back to original tab
+driver.switch_to.window(driver.window_handles[0])
